@@ -1,0 +1,152 @@
+:root {
+  --green-clr:#D8DA3D; /*variable with global scope */
+  --orange-clr:#FF7F00; /*variable with global scope*/
+  --purple-clr:#80007E; /*variable with global scope*/
+  --black-clr:#000000; /*variable with global scope*/
+}
+
+/* This * is used to apply CSS styles globally to all elements on a web page  */
+* {
+  background-color: var(--green-clr);
+}
+
+/*This SCSS code is structured to reflect the HTML hierarchy.
+Styles for li are nested inside ul, showing they apply specifically to li elements that are children of ul.
+This makes  styles organized and easy to understand.*/
+ul {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+ul li {
+  background-color: aliceblue;
+  margin: 10px;
+  padding: 3px;
+  color: var(--purple-clr);
+  font-size: 22px;
+  border-right: 15px solid black;
+}
+
+/* This CSS rule uses flexbox to arrange the columns of the box in a row.
+   It sets the display property to flex and the flex-direction to row.*/
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+/* This allows the col1 and col2 to to come side by side */
+.col1 {
+  width: 17%;
+  float: left;
+}
+
+.col2 {
+  margin: 5px;
+  margin-left: 25px;
+  padding: 0px 5px;
+  width: 90%;
+  float: right;
+}
+
+/* This CSS property is used to bring the digit or letter inside the class slightly downward as a subscript */
+.down-letter-common, .down-letter2, .down-letter {
+  vertical-align: sub;
+  font-size: 23px;
+}
+
+/* Apply the common styles and add additional styles for the down-letter class */
+.down-letter {
+  background-color: aliceblue;
+}
+
+/*Apply the common styles to the down-letter2 class without additional styles*/
+h1 {
+  font-family: sans-serif;
+  color: var(--purple-clr);
+  font-size: 35px;
+}
+
+p {
+  font-weight: lighter;
+  padding-top: 2px;
+  color: var(--purple-clr);
+  font-size: 21px;
+}
+
+hr {
+  border: 1px dotted var(--purple-clr);
+}
+
+/* This class css shows 8 in 2018 slightly bigger */
+.greater {
+  font-size: 23px;
+}
+
+/* Using Adjacent Sibling Selector even though it can be done in other ways also */
+hr + p {
+  font-style: italic;
+}
+
+li:nth-of-type(even) {
+  --blue-clr:#0000FF; /* to show variable with local scope */
+  border-color: var(--blue-clr);
+}
+
+li:nth-of-type(odd) {
+  border-color: var(--orange-clr);
+}
+
+/* Define a mixin for common border-box properties */
+#border1 {
+  /* Apply the mixin for border-box properties */
+  border: 0;
+  padding: 10px 8px;
+  max-width: 90%;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='3' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  color: #3b3b3b;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+  font-size: 22px;
+}
+
+#border2 {
+  /* Apply the mixin for border-box properties */
+  border: 3px dashed var(--orange-clr);
+  padding: 10px 8px;
+  max-width: 90%;
+  text-align: right;
+  transition: transform 1s ease-in-out;
+  color: var(--black-clr);
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 23px;
+}
+
+#border3 {
+  /* Apply the mixin for border-box properties */
+  border: 3px dotted #9393b5;
+  padding: 10px 8px;
+  max-width: 90%;
+  text-align: center;
+  color: rgb(36, 36, 36);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+}
+
+#border2:hover {
+  transform: translateY(-20px);
+  animation: bounceAnimation 0.5s infinite alternate;
+}
+
+@keyframes bounceAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.date {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}/*# sourceMappingURL=style.css.map */
